@@ -13,6 +13,16 @@ int max(int a, int b) {
 }
 
 // Brute force solution.
+/**
+	Recursive function.
+
+	@param M maximum weight.
+	@param n number of items.
+	@param value[] array of items values.
+	@param weight[] array of items weights.
+	@return best value can be hold on a maximum capacity of M
+
+*/
 int knap_sack_brute_force(int M, int n, int value[], int weight[]) {
 		// Base case
 	if (M == 0 || n == 0) {
@@ -35,6 +45,12 @@ int knap_sack_brute_force(int M, int n, int value[], int weight[]) {
 // Dynamic programming solution.
 /**
 	In this solution we are going to use a global table to save the previous recursive calls, so we don't have to compute it again.
+
+	@param M maximum weight.
+	@param n number of items.
+	@param value[] array of items values.
+	@param weight[] array of items weights.
+	@return best value can be hold on a maximum capacity of M
 */
 int knap_sack_dynamic(int M, int n, int value[], int weight[]) {
 	int K[n+1][M+1];
@@ -54,6 +70,7 @@ int knap_sack_dynamic(int M, int n, int value[], int weight[]) {
 
 	return K[n][M];
 }
+
 
 void random_test() {
 
